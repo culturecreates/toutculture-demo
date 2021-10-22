@@ -5,7 +5,7 @@ class ArtsdataEvent extends HTMLElement {
     <h3> ${ event.nameFr }</h3></a>
     <p> ${ attendanceMode(event.eventAttendanceMode) } </p>
     <div class="box"><img src="${ event.image || '' }"></div>
-    <p> ${ event.startDate || event.startDateWithoutTime } </p></div>`
+    <p> ${ new Date(event.startDate).toLocaleString('fr-FR',  { dateStyle: 'long', timeStyle: 'short', hour12: false, timeZone: 'EST' }) || event.startDateWithoutTime } </p></div>`
   }
 }
 
