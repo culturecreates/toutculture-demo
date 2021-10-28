@@ -7,10 +7,6 @@ main {
   align-items: end; 
 }
 
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 artsdata-event a,
 artsdata-event a:visited {
   text-decoration: none;
