@@ -1,9 +1,8 @@
-const apiKey = '' ;
-const format = 'json' ;
-const source = 'http://kg.artsdata.ca/culture-creates/footlight/spec-qc-ca' ; 
-const frame = 'event_bn';
-const limit = 10;
-const baseUrl = 'http://api.artsdata.ca/events' ;
-const artsdataApiUrl = `${baseUrl}?format=${format}&source=${source}&frame=${frame}&limit=${limit}` ;
+const apiKey = 'sandbox' ;
+const format = 'json' ;  // json|jsonld
+const source = 'http://kg.artsdata.ca/culture-creates/footlight/spec-qc-ca' ; // see list at https://s.zazuko.com/7PVXW
+const baseUrl = 'https://artsdata-api-staging.herokuapp.com' ;
+
+const artsdataApiUrl = `${baseUrl}?apiKey=${apiKey}&format=${format}&source=${source}` ;
 
 export { artsdataApiUrl } ;
