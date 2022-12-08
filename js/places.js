@@ -11,7 +11,7 @@ async function places() {
   json.data.forEach((place) => {
     
     const el = document.createElement("div" );
-    el.innerHTML = `${place.name.fr} <br>Geo: ${place.geo.latitude}, ${place.geo.longitude}`;
+    el.innerHTML = `${place.name.fr} <br>Events: ${place.eventCount}<br>Geo: ${place.geo.latitude}, ${place.geo.longitude}`;
     main.appendChild(el);
   });
 }
