@@ -1,19 +1,18 @@
-import { artsdataApiUrl } from "./artsdataApi.js"
-import "./artsdata-event.js"
-window.addEventListener('load',() => {
-  upcomingEvents();
-});
+import { footlightApiUrl } from "./footlightApi.js";
+import "./event-vignette.js";
+
+console.log(footlightApiUrl);
+
+upcomingEvents();
 
 async function upcomingEvents() {
-  const res = await fetch(artsdataApiUrl)
-  const json = await res.json()
+  const res = await fetch(footlightApiUrl);
+  const json = await res.json();
   console.log(json);
-  const main = document.querySelector('main')
-  json.data.forEach(event => {
-    const el = document.createElement('artsdata-event')
-    el.event = event
-    main.appendChild(el)
-  })
-
-  
+  const main = document.querySelector("main");
+  json.data.forEach((event) => {
+    const el = document.createElement("event-vignette");
+    el.event = event;
+    main.appendChild(el);
+  });
 }
