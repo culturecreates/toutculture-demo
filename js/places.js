@@ -1,5 +1,5 @@
 import { footlightApiPlacesUrl } from "./footlightApi.js";
-
+import { displayList } from "./utils/bilingual-array.js";
 
 places();
 
@@ -11,7 +11,12 @@ async function places() {
   json.data.forEach((place) => {
     
     const el = document.createElement("div" );
-    el.innerHTML = `${place.name.fr} <br>Events: ${place.eventCount}<br>Geo: ${place.geo.latitude}, ${place.geo.longitude}`;
+    if (place.additionalType != undefined) {
+      el.innerHTML = `<h2>${place.name.fr}</h2> <br> ${displayList(place.additionalType)} <br>Events: ${place.eventCount}<br>Geo: ${place.geo.latitude}, ${place.geo.longitude}`;
+
+    } else {
+      el.innerHTML = `<h2>${place.name.fr}</h2>  <br>Events: ${place.eventCount}<br>Geo: ${place.geo.latitude}, ${place.geo.longitude}`;
+    }
     main.appendChild(el);
   });
 }
