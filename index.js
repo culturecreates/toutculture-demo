@@ -1,7 +1,5 @@
 import { footlightApiUrl } from "./footlightApi.js";
-import "./event-vignette.js";
-
-console.log(footlightApiUrl);
+import "./events/event-vignette.js";
 
 upcomingEvents();
 
