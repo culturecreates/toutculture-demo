@@ -1,7 +1,6 @@
-export const additionalType = (types) => {
+export const concepts = (types) => {
   var html = "";
   if (types.length > 0) {
-    html += "Types: ";
     html += "<ul>";
     types.forEach((type) => {
       html += `<li>${type.name.fr || type.name.en}`;
