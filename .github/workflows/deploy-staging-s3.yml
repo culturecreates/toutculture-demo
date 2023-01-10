@@ -1,8 +1,8 @@
-name: Deploy to S3
+name: Deploy staging to S3
 on:
   push:
     branches:
-    - main
+    - staging
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -10,9 +10,9 @@ jobs:
       image: sleavely/node-awscli:14.x
     steps:
     - uses: actions/checkout@v2
-    - run: aws s3 sync . s3://demo.tout-culture --acl public-read --delete
+    - run: aws s3 sync . s3://demo.staging-tout-culture --acl public-read --delete
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
         AWS_REGION: ca-central-1 
-        WEBHOSTING_BUCKET_NAME: demo.tout-culture
+        WEBHOSTING_BUCKET_NAME: demo.staging-tout-culture
