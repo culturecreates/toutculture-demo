@@ -23,7 +23,7 @@
     if (event.endDateTime) {
       html +=
         "<br>--> DATE-TIME: " +
-          new Date(event.endDate).toLocaleString("fr-FR", {
+          new Date(event.endDateTime).toLocaleString("fr-FR", {
             dateStyle: "medium",
             timeStyle: "short",
             hour12: false,
