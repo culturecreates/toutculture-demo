@@ -10,7 +10,7 @@ class EventVignette extends HTMLElement {
   set event(event) {
     this.innerHTML = `
     <div>
-    <a href=/events/event-details.html?eventId=${event.id}><div class="box"><img src="${event.image.thumbnail.uri || ""}"></div>
+    <a href=/events/event-details.html?eventId=${event.id}><div class="box"><img src="${event.image.thumbnail || ""}"></div>
    <h3> ${event.name.fr || event.name.en}  ${eventStatus(
       event.eventStatus
     )} ${attendanceMode(event.eventAttendanceMode)}</h3></a>
