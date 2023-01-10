@@ -4,13 +4,15 @@
   import { attendanceMode } from "./event-attendance-mode.js";
   import { dateFormat } from "../utils/date-format.js";
   import { offer } from "./event-offer.js";
+  import { generateEnvironmentEditLink } from "./event-edit-link.js";
   
   class EventDetailVig extends HTMLElement {
     set details(event) {
       this.innerHTML = `
       <div>
       <div class="box"><img src="${event.image.thumbnail || ""}"></div>
-      <p>edit in <a href="https://oldcms.footlight.io/admin/add-event/?id=${event.id}">oldcms<a></p>
+
+      <p> ${generateEnvironmentEditLink(event)}</p>
       <h3> ${event.name.fr || event.name.en}  ${eventStatus(
         event.eventStatus
       )} ${attendanceMode(event.eventAttendanceMode)}</h3>
