@@ -3,14 +3,22 @@ import "./events/event-vignette.js";
 
 upcomingEvents();
 
-async function upcomingEvents() {
-  const res = await fetch(footlightApiUrl);
-  const json = await res.json();
-  console.log(json);
-  const main = document.querySelector("main");
-  json.data.forEach((event) => {
-    const el = document.createElement("event-vignette");
-    el.event = event;
-    main.appendChild(el);
+function upcomingEvents() {
+  const vignettesSections = document.querySelectorAll(".event-list");
+  vignettesSections.forEach( async function (vignetteSection) {
+    let query = footlightApiUrl
+    if (vignetteSection.dataset.param) {
+      query += vignetteSection.dataset.param
+    }
+    const res = await fetch(query);
+    const json = await res.json();
+    console.log(json);
+    
+    json.data.forEach((event) => {
+      const el = document.createElement("event-vignette");
+      el.event = event;
+      vignetteSection.appendChild(el);
+    });
   });
+  
 }
