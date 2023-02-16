@@ -28,7 +28,7 @@ export const dateFormat = (event) => {
 
   if (event.endDateTime) {
     html +=
-      "<br>--> DATE-TIME: " + formatter.format(new Date(event.startDateTime)) ||
+      "<br>--> DATE-TIME: " + formatter.format(new Date(event.endDateTime)) ||
       "";
   }
 
