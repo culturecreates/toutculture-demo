@@ -1,35 +1,40 @@
 export const dateFormat = (event) => {
-  const formatter = new Intl.DateTimeFormat("fr-CA", {
-    // dateStyle: 'long',
-    // timeStyle: 'short',
-    hour: "numeric",
-    hour12: false,
-    minute: "numeric",
+
+  const dateTimeOptions = { 
     weekday: "short",
     day: "numeric",
     month: "short",
     year: "numeric",
+  };
+
+  const locale = "fr-QC";
+
+  const dateTimeFormatter = new Intl.DateTimeFormat(locale, {
+    ...dateTimeOptions,
     timeZone: "America/Montreal",
+  });
+
+  const dateFormatter = new Intl.DateTimeFormat(locale, {
+    ...dateTimeOptions,
+    timeZone: "UTC",
   });
 
   var html = "";
   if (event.startDate) {
-    html += `DATE: ${event.startDate}`;
+    html += `DATE: ${dateFormatter.format(new Date(event.startDate))}`;
   }
 
   if (event.startDateTime) {
-    html += "DATE-TIME: ";
-    html += formatter.format(new Date(event.startDateTime));
+    html += `DATE-TIME: ${dateTimeFormatter.format(new Date(event.startDateTime))}`;
   }
 
   if (event.endDate) {
-    html += `<br>--> DATE: ${event.endDate}`;
+    html += `<br>--> DATE: ${dateFormatter.format(new Date(event.endDate))}`;
   }
 
   if (event.endDateTime) {
     html +=
-      "<br>--> DATE-TIME: " + formatter.format(new Date(event.endDateTime)) ||
-      "";
+      `<br>--> DATE-TIME: ${dateTimeFormatter.format(new Date(event.endDateTime))}`;
   }
 
   return html;
