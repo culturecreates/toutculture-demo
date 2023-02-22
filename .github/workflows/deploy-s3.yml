@@ -11,6 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: sed -i 's/staging.api.footlight.io/api.footlight.io/g' index.html
+    - run: sed -i 's/staging.api.footlight.io/api.footlight.io/g' organizations/search-orgs.html
+    - run: sed -i 's/staging.api.footlight.io/api.footlight.io/g' events/search-events.html
     - run: sed -i 's/staging.api.footlight.io/api.footlight.io/g' footlightApi.js
     - run: aws s3 sync . s3://demo.tout-culture --acl public-read --delete
       env:
