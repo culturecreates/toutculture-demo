@@ -3,10 +3,10 @@ import { displayList } from "../utils/bilingual-array.js";
 
 class PlaceDetailVig extends HTMLElement {
   set details(place) {
-    let concept = "";
+    let conceptChoices = "";
     if (place.taxonomyMap) {
       place.taxonomyMap.forEach((taxonomy) => {
-        concept += concepts(place[taxonomy.id]);
+        conceptChoices += concepts(place[taxonomy.id]) ;
       });
     }
 
@@ -14,9 +14,9 @@ class PlaceDetailVig extends HTMLElement {
     <div>
     <h2> ${place.name?.fr || place.name?.en} </h2>
 
-    en: ${place.name.en || ""}
+    en: ${place.name?.en || ""}
     <br>
-    fr: ${place.name.fr || ""}
+    fr: ${place.name?.fr || ""}
     <div class="box"><img src="${place.image?.thumbnail || ""}"></div>
 
     <p><b>Address:</b> ${
@@ -26,7 +26,7 @@ class PlaceDetailVig extends HTMLElement {
     <p><b>Type:</b> ${displayList(place.additionalType)}</p>
 
     <p><b>Custom Taxonomies:</b> ${concepts(place.taxonomyMap)} </p>
-    <p><b>Custom Concepts:</b>  ${concept}</p>
+    <p><b>Selected Concepts:</b>  ${conceptChoices}</p>
 
     <p><b>ContainedInPlace:</b> ${place.containedInPlace?.name?.fr || ""}</p>
 

@@ -8,6 +8,13 @@
   
   class EventDetailVig extends HTMLElement {
     set details(event) {
+      let conceptChoices = "";
+      if (event.taxonomyMap) {
+        event.taxonomyMap.forEach((taxonomy) => {
+          conceptChoices += concepts(event[taxonomy.id]);
+        });
+      }
+
       this.innerHTML = `
       <div>
       <div class="box"><img src="${event.image?.thumbnail || ""}"></div>
@@ -21,6 +28,10 @@
       <p> ${offer(event.offers)} </p>
       <p> <b>Type:</b> ${concepts(event.additionalType)} </p>
       <p> <b>Audience:</b> ${concepts(event.audience)} </p>
+
+      <p><b>Custom Taxonomies:</b> ${concepts(event.taxonomyMap)} </p>
+      <p><b>Selected Concepts:</b>  ${conceptChoices}</p>
+
       <p> <b>Description:</b> ${event.description?.fr || event.description?.en }
       </div>`;
     }
