@@ -7,6 +7,7 @@ const footlightApiPeopleUrl = `${endPoint}people?sort=name.en&page=1&limit=100`;
 const footlightApiEventDetails = `${baseUrl}/events`;
 const footlightApiPersonDetails = `${baseUrl}/people`;
 const footlightApiOrgDetails = `${baseUrl}/organizations`;
+const footlightApiPlaceDetails = `${baseUrl}/places`;
 
 export {
   footlightApiUrl,
@@ -16,4 +17,5 @@ export {
   footlightApiPeopleUrl,
   footlightApiPersonDetails,
   footlightApiOrgDetails,
+  footlightApiPlaceDetails,
 };
