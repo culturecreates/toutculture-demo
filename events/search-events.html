@@ -22,9 +22,13 @@
     <div
     id="minimal-footlight-search-widget" 
     data-api="staging.api.footlight.io" 
-    data-event-url="event-details.html?eventId=" 
-    data-search-events-url="search-events.html" 
-  ></div>
+    data-event-url="/events/event-details.html?eventId=" 
+    data-org-url="/organizations/org-details.html?orgId=" 
+    data-search-events-url="/events/search-events.html" 
+    data-search-orgs-url="/organizations/search-orgs.html"
+    ></div>
+    <h2>Results for: <query></query></h2>
+
     <main class="event-list"></main>
 
     <script src="search-events.js" type="module"></script>

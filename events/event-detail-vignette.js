@@ -10,7 +10,7 @@
     set details(event) {
       this.innerHTML = `
       <div>
-      <div class="box"><img src="${event.image.thumbnail || ""}"></div>
+      <div class="box"><img src="${event.image?.thumbnail || ""}"></div>
 
       <p> ${generateEnvironmentEditLink(event)}</p>
       <h3> ${event.name.fr || event.name.en}  ${eventStatus(
@@ -21,7 +21,7 @@
       <p> ${offer(event.offers)} </p>
       <p> <b>Type:</b> ${concepts(event.additionalType)} </p>
       <p> <b>Audience:</b> ${concepts(event.audience)} </p>
-      <p> <b>Description:</b> ${event.description.fr || event.description.en }
+      <p> <b>Description:</b> ${event.description?.fr || event.description?.en }
       </div>`;
     }
   }
