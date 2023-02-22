@@ -4,14 +4,15 @@ import { displayList } from "../utils/bilingual-array.js";
 class PlaceDetailVig extends HTMLElement {
   set details(place) {
     let concept = "";
-
-    place.taxonomyMap.forEach((taxonomy) => {
-      concept += concepts(place[taxonomy.id]);
-    });
+    if (place.taxonomyMap) {
+      place.taxonomyMap.forEach((taxonomy) => {
+        concept += concepts(place[taxonomy.id]);
+      });
+    }
 
     this.innerHTML = `
     <div>
-    <h2> ${place.name.fr || place.name.en} </h2>
+    <h2> ${place.name?.fr || place.name?.en} </h2>
 
     en: ${place.name.en || ""}
     <br>
@@ -27,12 +28,12 @@ class PlaceDetailVig extends HTMLElement {
     <p><b>Custom Taxonomies:</b> ${concepts(place.taxonomyMap)} </p>
     <p><b>Custom Concepts:</b>  ${concept}</p>
 
-    <p><b>ContainedInPlace:</b> ${place?.containedInPlace?.name?.fr || ""}</p>
+    <p><b>ContainedInPlace:</b> ${place.containedInPlace?.name?.fr || ""}</p>
 
-    <p><b>Geo:</b> ${place.geo.latitude || ""}  ${place.geo.longitude}</p>
+    <p><b>Geo:</b> ${place.geo?.latitude || ""}  ${place.geo?.longitude}</p>
  
     <p> <b>Description:</b> ${
-      place.description.fr || place.description.en || ""
+      place.description?.fr || place.description?.en || ""
     }
     </div>`;
   }
