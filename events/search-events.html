@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Search Events</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script
+      defer="defer"
+      src="http://minimal-footlight-search-widget.s3.ca-central-1.amazonaws.com/dist/index.js"
+    ></script>
+    <link
+      href="http://minimal-footlight-search-widget.s3.ca-central-1.amazonaws.com/dist/index.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <a href="../index.html">home</a>
+    <header>
+      <h1>Search Events - Tout Culture</h1>
+    </header>
+    <div
+    id="minimal-footlight-search-widget" 
+    data-api="staging.api.footlight.io" 
+    data-event-url="event-details.html?eventId=" 
+    data-search-events-url="search-events.html" 
+  ></div>
+    <main class="event-list"></main>
+
+    <script src="search-events.js" type="module"></script>
+  </body>
+</html>

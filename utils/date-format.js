@@ -11,6 +11,8 @@ export const dateFormat = (event) => {
 
   const dateTimeFormatter = new Intl.DateTimeFormat(locale, {
     ...dateTimeOptions,
+    hour: "numeric",
+    minute: "numeric",
     timeZone: "America/Montreal",
   });
 
