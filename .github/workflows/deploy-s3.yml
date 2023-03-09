@@ -14,6 +14,7 @@ jobs:
     - run: sed -i 's/staging.api.footlight.io/api.footlight.io/g' organizations/search-orgs.html
     - run: sed -i 's/staging.api.footlight.io/api.footlight.io/g' events/search-events.html
     - run: sed -i 's/staging.api.footlight.io/api.footlight.io/g' footlightApi.js
+    - run: sed -i 's/63bf164443d51e00705e349e/63b861f21c6b6c005aad483b/g' places/places.js
     - run: aws s3 sync . s3://demo.tout-culture --acl public-read --delete
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
