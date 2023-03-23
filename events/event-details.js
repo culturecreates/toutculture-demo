@@ -4,7 +4,7 @@ import "./event-detail-vignette.js";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const eventDetailsUrl =
-  footlightApiEventDetails + "/" + urlParams.get("eventId");
+  footlightApiEventDetails + "/" + urlParams.get("eventId") + "?include-json-ld=true";
 
 eventDetails(eventDetailsUrl);
 

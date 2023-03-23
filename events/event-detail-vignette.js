@@ -34,6 +34,11 @@
 
       <p> <b>Description:</b> ${event.description?.fr || event.description?.en }
       </div>`;
+
+      const script = document.createElement('script')
+      script.type = "application/ld+json";
+      script.innerHTML = JSON.stringify(JSON.parse(event.jsonld));
+      this.appendChild(script);
     }
   }
   
