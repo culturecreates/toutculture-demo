@@ -15,6 +15,11 @@
         });
       }
 
+      let dateOccurences = '';
+      event.subEvent?.forEach((subEvent) => {
+        dateOccurences += '<li>' + dateFormat(subEvent) + '</li>';
+      });
+
       this.innerHTML = `
       <div>
       <div class="box"><img src="${event.image?.thumbnail || ""}"></div>
@@ -31,6 +36,9 @@
 
       <p><b>Custom Taxonomies:</b> ${concepts(event.taxonomyMap)} </p>
       <p><b>Selected Concepts:</b>  ${conceptChoices}</p>
+
+      <p><b>Event Occurences:</b> <ul> ${dateOccurences} </ul> </p>
+   
 
       <p> <b>Description:</b> ${event.description?.fr || event.description?.en }
       </div>`;
