@@ -1,4 +1,4 @@
-const baseUrl = "https://staging.api.footlight.io";
+const baseUrl = "https://api.footlight.io";
 const endPoint = `${baseUrl}/calendars/tout-culture/`;
 const footlightApiUrl = `${endPoint}events?page=1`;
 const footlightApiPlacesUrl = `${endPoint}places?sort=name.fr&page=1&limit=100&include-event-count=true`;
