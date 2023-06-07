@@ -7,8 +7,8 @@ export const dateFormat = (event) => {
     year: "numeric",
   };
 
-  const locale = "fr-QC";
-
+  //const locale = "fr-QC";
+  const locale = "en-CA";
   const dateTimeFormatter = new Intl.DateTimeFormat(locale, {
     ...dateTimeOptions,
     hour: "numeric",
@@ -22,6 +22,10 @@ export const dateFormat = (event) => {
   });
 
   var html = "";
+
+  if (event.subEventDetails?.nextUpcomingSubEventDateTime) {
+    html += `NEXT: ${dateTimeFormatter.format(new Date(event.subEventDetails.nextUpcomingSubEventDateTime))}<br>`;
+  }
   if (event.startDate) {
     html += `DATE: ${dateFormatter.format(new Date(event.startDate))}`;
   }

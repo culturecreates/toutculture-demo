@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <title>Tout Culture</title>
     <meta charset="UTF-8" />
@@ -31,8 +31,9 @@
     <a href="people/people.html">People</a>
 
     <hr>
-    <h1>Featured followed by Upcoming (limit 5)</h1>
-    <div class="event-list" data-param="&sort=desc(isFeatured)&limit=5"></div>
+    <h1>Featured followed by Upcoming (limit 10)</h1>
+    <h4>sort=desc(isFeatured),asc(startDateTime),asc(metadata.rarityScore)</h4>
+    <div class="event-list" data-param="&sort=desc(isFeatured),asc(startDateTime),asc(metadata.rarityScore)&limit=10"></div>
     <hr>
     <h1> Workshops/Courses</h1>
     <div class="event-list" data-param="&type=64776b93fbeda20064d2332f&type=64776b93fbeda20064d23331&limit=100"></div>
