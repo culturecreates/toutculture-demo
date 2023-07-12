@@ -5,6 +5,8 @@ This website demonstrates a simple use of the Footlight API to display upcoming 
 
 This demo is built with plain javascript and html/css. No frameworks or package managers.
 
+The Minimal Search Widget is used in this demo.
+
 To install
 ==========
 Clone this repository and run a web server in the root. 

@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="styles.css" />
     <script
       defer="defer"
-      src="http://minimal-footlight-search-widget.s3.ca-central-1.amazonaws.com/dist/index.js"
+      src="http://staging.minimal-footlight-search-widget.s3.ca-central-1.amazonaws.com/v2/dist/index.js"
     ></script>
     <link
-      href="http://minimal-footlight-search-widget.s3.ca-central-1.amazonaws.com/dist/index.css"
+      href="http://staging.minimal-footlight-search-widget.s3.ca-central-1.amazonaws.com/v2/dist/index.css"
       rel="stylesheet"
     />
   </head>
@@ -36,13 +36,13 @@
     <div class="event-list" data-param="&sort=desc(isFeatured),asc(startDateTime),asc(metadata.rarityScore)&limit=10"></div>
     <hr>
     <h1> Workshops/Courses</h1>
-    <div class="event-list" data-param="&type=64776b93fbeda20064d2332f&type=64776b93fbeda20064d23331&limit=100"></div>
+    <div class="event-list" data-param="&type=64776b93fbeda20064d2332f&type=64776b93fbeda20064d23331&limit=10"></div>
     <hr>
     <h1>Free Events</h1>
-    <div class="event-list" data-param="&price-type=free&limit=100"></div>
+    <div class="event-list" data-param="&price-type=free&limit=10"></div>
     <hr>
     <h1>All Events except Workshop/Courses (limit 50)</h1>
-    <div class="event-list" data-param="&limit=50&exclude-type=64776b93fbeda20064d2332f&exclude-type=64776b93fbeda20064d23331"></div>
+    <div class="event-list" data-param="&limit=20&exclude-type=64776b93fbeda20064d2332f&exclude-type=64776b93fbeda20064d23331"></div>
     <script src="index.js" type="module"></script>
   </body>
 </html>
