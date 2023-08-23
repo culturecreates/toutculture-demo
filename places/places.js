@@ -18,7 +18,7 @@ async function places() {
 
 async function mapPlaces() {
   // Filter by POI: Heritage building, park, museum
-  const res = await fetch(footlightApiPlacesUrl + "&concept=63bf164443d51e00705e349e");
+  const res = await fetch(footlightApiPlacesUrl + "&concept=63b861f21c6b6c005aad483b");
   const json = await res.json();
   console.log(json);
   const main = document.querySelector("#map");
