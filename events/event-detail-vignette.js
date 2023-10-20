@@ -22,7 +22,12 @@
 
       this.innerHTML = `
       <div>
-      <div class="box"><img src="${event.image?.thumbnail || ""}"></div>
+      <h3>Thumbnail</h3>
+      <img src="${event.image?.thumbnail || ""}">
+      <h3>Large</h3>
+      <img src="${event.image?.large || ""}">
+      <h3>Original</h3>
+      <img src="${event.image?.original || ""}">
 
       <p> ${generateEnvironmentEditLink(event)}</p>
       <h3> ${event.name.fr || event.name.en}  ${eventStatus(
